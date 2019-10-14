@@ -21,7 +21,7 @@ func main() {
 
 	jsonValue, _ := json.Marshal(jsonData)
 	req, _ := http.NewRequest("POST", "https://httpbin.org/post", bytes.NewBuffer(jsonValue))
-	client := &httpClient{}
+	client := &http.Client{}
 	resp, err = client.Do(req)
 	// resp, err = http.Post("https://httpbin.org/post", "application/json", bytes.NewBuffer(jsonValue))
 	if err != nil {
